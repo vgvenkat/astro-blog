@@ -1,0 +1,11 @@
+---
+title: 'Day 4 - Youtube Clone'
+description: 'Building a YouTube clone with React, Redux, and exploring GraphQL integration.'
+pubDate: 'Aug 30 2017'
+---
+
+Currently doing a youtube clone with react and redux. The idea is to add Graphql and _Relay?_ if it makes sense.
+
+Also came across [Google's Mobile web specialist certification](https://developers.google.com/training/certification/mobile-web-specialist/)
+
+The [requirements](https://developers.google.com/training/certification/mobile-web-specialist/StudyGuide-MobileWebSpecialist.pdf) look interesting, might take it at some point. It is $99 USD for the exam. Might help solidify some knowledge.

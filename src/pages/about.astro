@@ -1,63 +1,262 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About | ${SITE_TITLE}`} description="Senior Software Engineer with 10+ years of experience in frontend development" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article class="about-container">
+				<header class="about-header">
+					<h1>About Me</h1>
+					<p>Building the web, one component at a time.</p>
+				</header>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+				<section class="about-content">
+					<div class="intro-box">
+						<p>
+							I'm <strong>Venkat Ganesan</strong>, a Senior Software Engineer based in San Jose, California.
+							With over a decade of experience in software development, I've built my career around creating
+							rich, scalable web applications that users love.
+						</p>
+					</div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+					<div class="section">
+						<h2>What I Do</h2>
+						<p>
+							My expertise lies in frontend technologies, particularly
+							<span class="tech-inline">React</span>,
+							<span class="tech-inline">Redux</span>, and
+							<span class="tech-inline">TypeScript</span>.
+							I'm passionate about building accessible, internationalized applications with clean, testable code.
+						</p>
+					</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+					<div class="section">
+						<h2>Experience</h2>
+						<div class="exp-card">
+							<div class="exp-header">
+								<h3>eBay</h3>
+								<span class="exp-role">Senior Software Engineer</span>
+							</div>
+							<p>
+								Delivered complex frontend initiatives supporting 120K+ daily active sellers.
+								Led REST-to-GraphQL migration reducing codebase by ~30%. Built reusable component
+								libraries with Storybook and championed accessibility best practices.
+							</p>
+						</div>
+						<div class="exp-card">
+							<div class="exp-header">
+								<h3>Condos.ca</h3>
+								<span class="exp-role">Senior Full Stack Developer</span>
+							</div>
+							<p>
+								Migrated legacy PHP applications to modern React/Redux SPAs while maintaining SEO performance.
+							</p>
+						</div>
+						<div class="exp-card">
+							<div class="exp-header">
+								<h3>Verizon</h3>
+								<span class="exp-role">Senior Product Developer</span>
+							</div>
+							<p>
+								Led Angular-to-React modernization and built data visualization dashboards with D3.js.
+							</p>
+						</div>
+					</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+					<div class="section">
+						<h2>Education</h2>
+						<div class="edu-box">
+							<strong>M.S. Software Engineering</strong> — San Jose State University
+						</div>
+					</div>
+
+					<div class="section">
+						<h2>Let's Connect</h2>
+						<p>
+							I'm currently exploring new opportunities where I can contribute to impactful products
+							and collaborate with passionate teams.
+						</p>
+						<div class="connect-links">
+							<a href="https://linkedin.com/in/vgvenkat" target="_blank" class="connect-btn">LinkedIn</a>
+							<a href="https://github.com/vgvenkat" target="_blank" class="connect-btn secondary">GitHub</a>
+						</div>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+
+	.about-container {
+		background: var(--bg-card);
+		border: var(--border-thick);
+		box-shadow: var(--shadow);
+	}
+
+	.about-header {
+		text-align: center;
+		padding: 2em;
+		background: var(--primary);
+		border-bottom: var(--border-thick);
+	}
+
+	.about-header h1 {
+		font-size: 2.8em;
+		margin-bottom: 0.2em;
+	}
+
+	.about-header p {
+		font-size: 1.1em;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.about-content {
+		padding: 2em;
+	}
+
+	.intro-box {
+		background: var(--accent);
+		color: #000;
+		padding: 1.5em;
+		border: var(--border);
+		box-shadow: var(--shadow-sm);
+		margin-bottom: 2em;
+	}
+
+	.intro-box p {
+		margin: 0;
+		font-size: 1.1em;
+		line-height: 1.6;
+	}
+
+	.section {
+		margin-bottom: 2em;
+	}
+
+	.section h2 {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	.tech-inline {
+		display: inline-block;
+		padding: 0.1em 0.5em;
+		background: var(--tertiary);
+		border: 2px solid #000;
+		font-family: monospace;
+		font-weight: 700;
+	}
+
+	.exp-card {
+		background: var(--bg);
+		border: var(--border);
+		box-shadow: var(--shadow-sm);
+		padding: 1.5em;
+		margin-bottom: 1em;
+	}
+
+	.exp-header {
+		display: flex;
+		align-items: baseline;
+		gap: 1em;
+		margin-bottom: 0.8em;
+		flex-wrap: wrap;
+	}
+
+	.exp-header h3 {
+		margin: 0;
+		font-size: 1.2em;
+		text-transform: uppercase;
+	}
+
+	.exp-role {
+		display: inline-block;
+		padding: 0.2em 0.6em;
+		background: var(--secondary);
+		color: #000;
+		border: 2px solid #000;
+		font-size: 0.8em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.exp-card p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	.edu-box {
+		background: var(--primary);
+		padding: 1em 1.5em;
+		border: var(--border);
+		box-shadow: var(--shadow-sm);
+		font-size: 1.1em;
+	}
+
+	.connect-links {
+		display: flex;
+		gap: 0.8em;
+		margin-top: 1.5em;
+		flex-wrap: wrap;
+	}
+
+	.connect-btn {
+		display: inline-block;
+		padding: 0.7em 1.5em;
+		background: var(--primary);
+		border: var(--border);
+		box-shadow: var(--shadow-sm);
+		color: #000;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		transition: all 0.1s ease;
+	}
+
+	.connect-btn.secondary {
+		background: var(--accent);
+		color: #000;
+	}
+
+	.connect-btn:hover {
+		transform: translate(-2px, -2px);
+		box-shadow: var(--shadow);
+	}
+
+	@media (max-width: 720px) {
+		.about-header {
+			padding: 1.5em;
+		}
+
+		.about-header h1 {
+			font-size: 2em;
+		}
+
+		.about-content {
+			padding: 1.5em;
+		}
+
+		.exp-header {
+			flex-direction: column;
+			gap: 0.5em;
+		}
+	}
+</style>

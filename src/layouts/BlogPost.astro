@@ -14,69 +14,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
 	<body>
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+				{heroImage && (
+					<div class="hero-image">
+						<Image width={1020} height={510} src={heroImage} alt="" />
+					</div>
+				)}
+				<div class="article-header">
+					<div class="meta">
+						<span class="date-badge"><FormattedDate date={pubDate} /></span>
+						{updatedDate && (
+							<span class="updated">
+								Updated: <FormattedDate date={updatedDate} />
+							</span>
+						)}
+					</div>
+					<h1>{title}</h1>
+					<p class="description">{description}</p>
 				</div>
 				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
 					<slot />
 				</div>
 			</article>
@@ -84,3 +45,105 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+
+	article {
+		background: var(--bg-card);
+		border: var(--border-thick);
+		box-shadow: var(--shadow);
+	}
+
+	.hero-image {
+		border-bottom: var(--border-thick);
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border: none;
+		box-shadow: none;
+	}
+
+	.article-header {
+		padding: 2em;
+		border-bottom: var(--border-thick);
+		background: var(--secondary);
+	}
+
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		margin-bottom: 1em;
+		flex-wrap: wrap;
+	}
+
+	.date-badge {
+		display: inline-block;
+		padding: 0.3em 0.8em;
+		background: var(--primary);
+		border: 2px solid #000;
+		font-weight: 700;
+		font-size: 0.85em;
+		text-transform: uppercase;
+	}
+
+	.updated {
+		font-size: 0.85em;
+		font-style: normal;
+		font-weight: 700;
+		background: #fff;
+		border: 2px solid #000;
+		padding: 0.2em 0.5em;
+	}
+
+	.article-header h1 {
+		font-size: 2.5em;
+		margin-bottom: 0.3em;
+		text-transform: uppercase;
+	}
+
+	.description {
+		font-size: 1.1em;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.prose {
+		padding: 2em;
+	}
+
+	.prose h2 {
+		margin-top: 2em;
+	}
+
+	.prose h2:first-child {
+		margin-top: 0;
+	}
+
+	@media (max-width: 720px) {
+		main {
+			padding: 1em;
+		}
+
+		.article-header {
+			padding: 1.5em;
+		}
+
+		.article-header h1 {
+			font-size: 1.8em;
+		}
+
+		.prose {
+			padding: 1.5em;
+		}
+	}
+</style>
